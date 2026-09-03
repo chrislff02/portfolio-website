@@ -1,0 +1,45 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+/* Global Theme */
+:root {
+  font-family: "VT323", monospace;
+
+  color: #45f59a;
+  background-color: #101310;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+/* Global Box Sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Page Body */
+body {
+  margin: 0;
+
+  min-width: 320px;
+  min-height: 100vh;
+
+  background-color: #101310;
+  color: #45f59a;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+}
