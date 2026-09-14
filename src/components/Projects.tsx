@@ -26,11 +26,11 @@ function Projects() {
 
         <ProjectCard
           number="03"
-          title="SNAKE_GAME.TSX"
-          technologies="TypeScript / CSS"
-          description="Responsive Snake game featuring score tracking, high scores, collision detection, and dynamic food spawning."
-          viewProject="https://snake-game-coral-eta.vercel.app/"
-          githubUrl="https://github.com/chrislff02/Snake-Game"
+          title="ALGORITHM_VISUALIZER.TSX"
+          technologies="React / TypeScript / Vite / CSS"
+          description="Interactive web application for visualizing common computer science algorithms step by step."
+          viewProject="https://algorithm-visualizer-one-gamma.vercel.app/"
+          githubUrl="https://github.com/chrislff02/algorithm-visualizer"
         />
 
         <ProjectCard
