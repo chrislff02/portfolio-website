@@ -154,8 +154,15 @@ section {
 
   padding: 12px 20px;
 
+  background-color: transparent;
   color: #45f59a;
+
+  font-family: inherit;
+  font-size: inherit;
+
   text-decoration: none;
+
+  cursor: pointer;
 
   transition: 0.2s;
 }
@@ -251,6 +258,8 @@ section {
 
   display: flex;
   flex-direction: column;
+
+  transition: 0.2s;
 }
 
 .project-card:hover {
@@ -289,7 +298,131 @@ section {
   padding-top: 30px;
 
   display: flex;
+  flex-wrap: wrap;
+
   gap: 15px;
+}
+
+
+/* Project Information Modal */
+.project-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 2000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+
+  background-color: rgba(0, 0, 0, 0.82);
+}
+
+.project-modal {
+  width: 100%;
+  max-width: 760px;
+  max-height: 85vh;
+
+  overflow-y: auto;
+
+  border: 2px solid #45f59a;
+
+  background-color: #101310;
+}
+
+.project-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 18px 24px;
+
+  border-bottom: 2px solid #45f59a;
+}
+
+.project-modal-header p {
+  margin: 0;
+
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.project-modal-close {
+  border: none;
+
+  padding: 5px;
+
+  background-color: transparent;
+  color: #45f59a;
+
+  font-family: inherit;
+  font-size: 1.2rem;
+
+  cursor: pointer;
+}
+
+.project-modal-close:hover {
+  background-color: #45f59a;
+  color: #101310;
+}
+
+.project-modal-content {
+  padding: 30px;
+}
+
+.project-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+
+  font-size: 2rem;
+}
+
+.project-modal-tech {
+  margin-top: 0;
+  margin-bottom: 35px;
+
+  opacity: 0.6;
+}
+
+.project-modal-section {
+  margin-top: 30px;
+}
+
+.project-modal-section h3 {
+  margin-bottom: 10px;
+
+  font-size: 1.4rem;
+}
+
+.project-modal-section p {
+  margin: 0;
+
+  font-size: 1.2rem;
+  line-height: 1.6;
+
+  opacity: 0.85;
+}
+
+.project-modal-section ul {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.project-modal-section li {
+  margin-bottom: 10px;
+
+  font-size: 1.2rem;
+  line-height: 1.6;
+
+  opacity: 0.85;
 }
 
 
@@ -365,6 +498,39 @@ section {
 
   .about-text {
     width: 100%;
+  }
+
+  /* Project Modal */
+  .project-modal-overlay {
+    padding: 20px;
+  }
+
+  .project-modal {
+    max-height: 88vh;
+  }
+
+  .project-modal-header {
+    padding: 15px 18px;
+  }
+
+  .project-modal-header p {
+    font-size: 1rem;
+  }
+
+  .project-modal-content {
+    padding: 22px;
+  }
+
+  .project-modal-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .project-modal-section p {
+    font-size: 1.1rem;
+  }
+
+  .project-modal-section li {
+    font-size: 1.1rem;
   }
 }
 
