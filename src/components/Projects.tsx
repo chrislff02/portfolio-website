@@ -71,22 +71,26 @@ function Projects() {
 
         <ProjectCard
           number="04"
-          title="BLACKJACK.JAVA"
-          technologies="Java"
-          description="Console-based Blackjack game featuring betting, money management, card drawing & dealer gameplay."
+          title="JOB_APPLICATION_TRACKER.WEB"
+          technologies="React / TypeScript / Node.js / Express / PostgreSQL"
+          description="Full-stack application for organizing job applications, tracking progress, interviews & application analytics."
           moreInfo={{
             overview:
-              "BlackJack is a console-based implementation of the card game Blackjack. The program handles card drawing, betting, player balances, dealer behavior, win & loss conditions & repeated rounds of gameplay.",
+              "The Job Application Tracker is a full-stack web application designed to help users organize & manage their job search. Users can create, edit & track applications across different stages while also viewing interview details, application history & dashboard analytics.",
+
             challenges: [
-              "Handling different possible game outcomes such as blackjack, busts, wins, losses & ties",
-              "Implementing automated dealer behavior",
-              "Keeping track of the player's money & bets across multiple rounds",
-              "Handling user input throughout the game",
+              "Designing a database structure for users, job applications, interviews, statuses & related application data",
+              "Making authentication so every user securely accesses their own application information",
+              "Connecting the React frontend with the Express backend & PostgreSQL database",
+              "Keeping app status changes, dashboard statistics & application data synchronized",
+              "Designing the project so features such as filtering, searching, analytics & interview tracking could work together cleanly",
             ],
+
             learned:
-              "Strengthened my Java fundamentals & helped me practice breaking game logic into smaller parts. I gained more experience working with conditionals, loops, methods, collections & object-oriented programming.",
+              "Designing & building a complete full-stack application. The database to the user interface, React, TypeScript, Node.js, Express, PostgreSQL, API design, authentication, CRUD operations & organizing larger applications to reusable components & backend routes.",
           }}
-          githubUrl="https://github.com/chrislff02/BlackJack-java"
+          viewProject="https://job-application-tracker-silk-one.vercel.app/login"
+          githubUrl="https://github.com/chrislff02/job-application-tracker"
         />
 
         <ProjectCard
