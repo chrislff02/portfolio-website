@@ -22,7 +22,7 @@ function Projects() {
               "Connecting the React frontend, Node.js/Express backend, PostgreSQL database & Python recommendation system",
               "Making sure ratings, favorite artists, favorite genres & onboarding preferences persist correctly for each user",
               "Combining content-based similarity & collaborative filtering into personalized recommendations",
-              "Keeping recommendation results updated as users add new ratings and preferences",
+              "Keeping recommendation results updated as users add new ratings & preferences",
             ],
 
             learned:
