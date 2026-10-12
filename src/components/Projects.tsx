@@ -10,22 +10,26 @@ function Projects() {
       <div className="projects-grid">
         <ProjectCard
           number="01"
-          title="ROADRUNNERS.EXE"
-          technologies="Kotlin / Android / SQL / Location APIs"
-          description="Android application that tracks runs, distance, speed, average speed & stores previous runs."
+          title="MUSICMATCH.EXE"
+          technologies="React / TypeScript / Node.js / Express / PostgreSQL / Python"
+          description="Full-stack music recommendation engine based on ratings, preferences & collaborative filtering."
           moreInfo={{
             overview:
-              "RoadRunners is an Android running application that tracks workout information such as distance, current speed, average speed & previous runs. The application combines location tracking with persistent data storage to give users a history of their running activity.",
+              "MusicMatch is a full-stack music recommendation engine built with React, Node.js, PostgreSQL & Python. It provides personalized music recommendations based on user ratings, taste preferences, favorite artists/genres, content similarity & collaborative filtering.",
+
             challenges: [
-              "Learning Kotlin & how to use Android Studio",
-              "Working with Android location services/continuously updating the user's location",
-              "Calculating distance & speed using location data",
-              "Saving completed runs & retrieving them from the database to graph all the running data",
+              "Working within free-tier database hosting limits while making sure the deployed application remained usable over time",
+              "Connecting the React frontend, Node.js/Express backend, PostgreSQL database & Python recommendation system",
+              "Making sure ratings, favorite artists, favorite genres & onboarding preferences persist correctly for each user",
+              "Combining content-based similarity & collaborative filtering into personalized recommendations",
+              "Keeping recommendation results updated as users add new ratings and preferences",
             ],
+
             learned:
-              "Experience in building an Android application while working with real-time location data. I learned Kotlin & Andriod Studio & Android development.",
+              "Built a full-stack recommendation system that connects user accounts, persistent database data, backend APIs & machine learning logic. I strengthened my understanding of recommendation systems, collaborative filtering, content similarity, React, TypeScript, Node.js, PostgreSQL & Python.",
           }}
-          githubUrl="https://github.com/chrislff02/RoadRunners"
+          viewProject="https://musicmatch-eight.vercel.app/"
+          githubUrl="https://github.com/chrislff02/music-recommendation-engine"
         />
 
         <ProjectCard
