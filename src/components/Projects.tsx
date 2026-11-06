@@ -138,6 +138,29 @@ function Projects() {
           viewProject="https://personal-finance-dashboard-iota-six.vercel.app/"
           githubUrl="https://github.com/chrislff02/personal-finance-dashboard"
         />
+
+        <ProjectCard
+          number="07"
+          title="NETSCOPE.EXE"
+          technologies="Python / FastAPI / Scapy / React / TypeScript"
+          description="Network traffic analyzer for capturing, parsing, visualizing packet activity and protocol statistics."
+          moreInfo={{
+            overview:
+              "NetScope is a network traffic analyzer that captures and analyzes packet data, then presents traffic statistics through a React and TypeScript dashboard. It supports live packet capture as well as saved PCAP data, with protocol breakdowns, traffic history, packet inspection and network activity summaries.",
+
+            challenges: [
+              "Handling packet capture permissions on macOS and working with BPF device restrictions",
+              "Parsing raw network packets into structured data for TCP, UDP, ICMP, IP addresses, ports, timestamps, and packet sizes",
+              "Connecting the Python/FastAPI backend with the React and TypeScript frontend",
+              "Designing packet filtering, searching, pagination, and packet detail views for the Packet Explorer",
+              "Supporting both live capture data and saved PCAP data while keeping the dashboard statistics consistent",
+            ],
+
+            learned:
+              "Built a full-stack network analysis application that connects low-level packet capture with a modern web interface. I strengthened my understanding of networking protocols, packet parsing, FastAPI, Scapy, React, TypeScript, API integration and presenting real-time network data in a clear and usable way.",
+          }}
+          githubUrl="https://github.com/chrislff02/NetScope"
+        />
       </div>
     </section>
   );
