@@ -1,6 +1,9 @@
+import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 
 function Projects() {
+  const [showMoreProjects, setShowMoreProjects] = useState(false);
+
   return (
     <section className="projects" id="projects">
       {/* Section Command */}
@@ -8,6 +11,7 @@ function Projects() {
 
       {/* Project Grid */}
       <div className="projects-grid">
+        {/* MusicMatch */}
         <ProjectCard
           number="01"
           title="MUSICMATCH.EXE"
@@ -32,6 +36,7 @@ function Projects() {
           githubUrl="https://github.com/chrislff02/music-recommendation-engine"
         />
 
+        {/* Premier League Predictor */}
         <ProjectCard
           number="02"
           title="PREMIER_LEAGUE_PREDICTOR.PY"
@@ -40,39 +45,45 @@ function Projects() {
           moreInfo={{
             overview:
               "The Premier League Predictor is a machine learning project that uses historical match data to predict football match outcomes. Previous seasons are used to train the model before evaluating its predictions against unseen match data.",
+
             challenges: [
               "Organizing historical match data into consistent training & testing datasets",
               "Preventing test-season information from leaking into the training data",
               "Keeping feature columns consistent between training & prediction",
               "Evaluating the model on unseen data rather than data it had already learned from",
             ],
+
             learned:
               "Helped me better understand machine learning workflow, including preparing data, selecting features, training a model, evaluating predictions & interpreting feature importance. It also showed me how important proper train & test separation is when evaluating a model.",
           }}
           githubUrl="https://github.com/chrislff02/Premier-League-Predictor"
         />
 
+        {/* NetScope */}
         <ProjectCard
           number="03"
-          title="ALGORITHM_VISUALIZER.TSX"
-          technologies="React / TypeScript / Vite / CSS"
-          description="Interactive web application for visualizing common computer science algorithms step by step."
+          title="NETSCOPE.EXE"
+          technologies="Python / FastAPI / Scapy / React / TypeScript"
+          description="Network traffic analyzer for capturing, parsing, visualizing packet activity & protocol statistics."
           moreInfo={{
             overview:
-              "The Algorithm Visualizer is an interactive application that demonstrates how common computer science algorithms operate step by step. Users can watch values being compared, moved & sorted while tracking statistics such as comparisons & swaps.",
+              "NetScope is a network traffic analyzer that captures and analyzes packet data, then presents traffic statistics through a React and TypeScript dashboard. It supports live packet capture as well as saved PCAP data, with protocol breakdowns, traffic history, packet inspection & network activity summaries.",
+
             challenges: [
-              "Managing sorting animations while keeping React state synchronized",
-              "Allowing animation speed changes while an algorithm is already running",
-              "Creating different visual states for comparisons, pivots, minimum values, merge ranges & sorted elements",
-              "Making sure each algorithm correctly updates the visualization without interfering with user controls",
+              "Handling packet capture permissions on macOS & working with BPF device restrictions",
+              "Parsing raw network packets into structured data for TCP, UDP, ICMP, IP addresses, ports, timestamps & packet sizes",
+              "Connecting the Python/FastAPI backend with the React & TypeScript frontend",
+              "Designing packet filtering, searching, pagination & packet detail views for the Packet Explorer",
+              "Supporting both live capture data & saved PCAP data while keeping dashboard statistics consistent",
             ],
+
             learned:
-              "Reinforced my understanding of how sorting algorithms work internally rather than only focusing on their final output. It also gave me more experience with asynchronous JavaScript, React state management & turning algorithm operations into visual feedback.",
+              "Built a full-stack network analysis application that connects low-level packet capture with a modern web interface. I strengthened my understanding of networking protocols, packet parsing, FastAPI, Scapy, React, TypeScript, API integration & presenting network data in a clear and usable way.",
           }}
-          viewProject="https://algorithm-visualizer-one-gamma.vercel.app/"
-          githubUrl="https://github.com/chrislff02/algorithm-visualizer"
+          githubUrl="https://github.com/chrislff02/NetScope"
         />
 
+        {/* Job Application Tracker */}
         <ProjectCard
           number="04"
           title="JOB_APPLICATION_TRACKER.WEB"
@@ -91,76 +102,99 @@ function Projects() {
             ],
 
             learned:
-              "Designing & building a complete full-stack application. The database to the user interface, React, TypeScript, Node.js, Express, PostgreSQL, API design, authentication, CRUD operations & organizing larger applications to reusable components & backend routes.",
+              "Designed & built a complete full-stack application from the database to the user interface, strengthening my understanding of React, TypeScript, Node.js, Express, PostgreSQL, API design, authentication, CRUD operations & organizing larger applications into reusable components and backend routes.",
           }}
           viewProject="https://job-application-tracker-silk-one.vercel.app/login"
           githubUrl="https://github.com/chrislff02/job-application-tracker"
         />
 
-        <ProjectCard
-          number="05"
-          title="FLAPPY_BIRD.AI"
-          technologies="JavaScript / HTML / CSS / NEAT / Neural Networks"
-          description="Flappy Bird-style game featuring human gameplay & an AI agent evolved using a custom NEAT implementation."
-          moreInfo={{
-            overview:
-              "Flappy Bird AI combines a playable Flappy Bird-style game with an AI agent trained through a custom implementation of NEAT. Instead of relying on fixed movement rules, neural networks evolve over multiple generations based on their performance.",
-            challenges: [
-              "Designing a fitness system that appropriately rewards better-performing AI agents",
-              "Providing useful game information as inputs to the neural network",
-              "Managing multiple AI agents during training",
-              "Handling evolutionary concepts such as generations, selection & mutation",
-            ],
-            learned:
-              "Practical experience with neural networks & evolutionary algorithms. It helped me understand how an AI agent can improve through selection & mutation instead of relying entirely on explicitly programmed decisions.",
-          }}
-          viewProject="https://flappy-bird-ai-seven.vercel.app/"
-          githubUrl="https://github.com/chrislff02/flappy-bird-ai"
-        />
+        {/* Additional Projects */}
+        {showMoreProjects && (
+          <>
+            {/* Algorithm Visualizer */}
+            <ProjectCard
+              number="05"
+              title="ALGORITHM_VISUALIZER.TSX"
+              technologies="React / TypeScript / Vite / CSS"
+              description="Interactive web application for visualizing common computer science algorithms step by step."
+              moreInfo={{
+                overview:
+                  "The Algorithm Visualizer is an interactive application that demonstrates how common computer science algorithms operate step by step. Users can watch values being compared, moved & sorted while tracking statistics such as comparisons & swaps.",
 
-        <ProjectCard
-          number="06"
-          title="PERSONAL-FINANCE-DASHBOARD.APP"
-          technologies="TypeScript / Python / CSS / JavaScript / HTML"
-          description="Full-stack finance dashboard for tracking transactions, spending & financial trends."
-          moreInfo={{
-            overview:
-              "The Personal Finance Dashboard is a full-stack application for recording transactions & analyzing personal spending. Users can organize their financial activity & view information that helps identify spending patterns & financial trends.",
-            challenges: [
-              "Connecting the frontend & backend portions of the application",
-              "Designing how transaction data should be stored & retrieved",
-              "Keeping financial calculations synchronized when transactions are added/changed",
-              "Turning transaction data into useful summaries & visual information",
-            ],
-            learned:
-              "More experience building an application across both the frontend & backend. I learned more about designing APIs, handling application data, connecting different technologies together & presenting raw data in a useful way.",
-          }}
-          viewProject="https://personal-finance-dashboard-iota-six.vercel.app/"
-          githubUrl="https://github.com/chrislff02/personal-finance-dashboard"
-        />
+                challenges: [
+                  "Managing sorting animations while keeping React state synchronized",
+                  "Allowing animation speed changes while an algorithm is already running",
+                  "Creating different visual states for comparisons, pivots, minimum values, merge ranges & sorted elements",
+                  "Making sure each algorithm correctly updates the visualization without interfering with user controls",
+                ],
 
-        <ProjectCard
-          number="07"
-          title="NETSCOPE.EXE"
-          technologies="Python / FastAPI / Scapy / React / TypeScript"
-          description="Network traffic analyzer for capturing, parsing, visualizing packet activity and protocol statistics."
-          moreInfo={{
-            overview:
-              "NetScope is a network traffic analyzer that captures and analyzes packet data, then presents traffic statistics through a React and TypeScript dashboard. It supports live packet capture as well as saved PCAP data, with protocol breakdowns, traffic history, packet inspection and network activity summaries.",
+                learned:
+                  "Reinforced my understanding of how sorting algorithms work internally rather than only focusing on their final output. It also gave me more experience with asynchronous JavaScript, React state management & turning algorithm operations into visual feedback.",
+              }}
+              viewProject="https://algorithm-visualizer-one-gamma.vercel.app/"
+              githubUrl="https://github.com/chrislff02/algorithm-visualizer"
+            />
 
-            challenges: [
-              "Handling packet capture permissions on macOS and working with BPF device restrictions",
-              "Parsing raw network packets into structured data for TCP, UDP, ICMP, IP addresses, ports, timestamps, and packet sizes",
-              "Connecting the Python/FastAPI backend with the React and TypeScript frontend",
-              "Designing packet filtering, searching, pagination, and packet detail views for the Packet Explorer",
-              "Supporting both live capture data and saved PCAP data while keeping the dashboard statistics consistent",
-            ],
+            {/* Flappy Bird AI */}
+            <ProjectCard
+              number="06"
+              title="FLAPPY_BIRD.AI"
+              technologies="JavaScript / HTML / CSS / NEAT / Neural Networks"
+              description="Flappy Bird-style game featuring human gameplay & an AI agent evolved using a custom NEAT implementation."
+              moreInfo={{
+                overview:
+                  "Flappy Bird AI combines a playable Flappy Bird-style game with an AI agent trained through a custom implementation of NEAT. Instead of relying on fixed movement rules, neural networks evolve over multiple generations based on their performance.",
 
-            learned:
-              "Built a full-stack network analysis application that connects low-level packet capture with a modern web interface. I strengthened my understanding of networking protocols, packet parsing, FastAPI, Scapy, React, TypeScript, API integration and presenting real-time network data in a clear and usable way.",
-          }}
-          githubUrl="https://github.com/chrislff02/NetScope"
-        />
+                challenges: [
+                  "Designing a fitness system that appropriately rewards better-performing AI agents",
+                  "Providing useful game information as inputs to the neural network",
+                  "Managing multiple AI agents during training",
+                  "Handling evolutionary concepts such as generations, selection & mutation",
+                ],
+
+                learned:
+                  "Practical experience with neural networks & evolutionary algorithms. It helped me understand how an AI agent can improve through selection & mutation instead of relying entirely on explicitly programmed decisions.",
+              }}
+              viewProject="https://flappy-bird-ai-seven.vercel.app/"
+              githubUrl="https://github.com/chrislff02/flappy-bird-ai"
+            />
+
+            {/* Personal Finance Dashboard */}
+            <ProjectCard
+              number="07"
+              title="PERSONAL-FINANCE-DASHBOARD.APP"
+              technologies="TypeScript / Python / CSS / JavaScript / HTML"
+              description="Full-stack finance dashboard for tracking transactions, spending & financial trends."
+              moreInfo={{
+                overview:
+                  "The Personal Finance Dashboard is a full-stack application for recording transactions & analyzing personal spending. Users can organize their financial activity & view information that helps identify spending patterns & financial trends.",
+
+                challenges: [
+                  "Connecting the frontend & backend portions of the application",
+                  "Designing how transaction data should be stored & retrieved",
+                  "Keeping financial calculations synchronized when transactions are added/changed",
+                  "Turning transaction data into useful summaries & visual information",
+                ],
+
+                learned:
+                  "More experience building an application across both the frontend & backend. I learned more about designing APIs, handling application data, connecting different technologies together & presenting raw data in a useful way.",
+              }}
+              viewProject="https://personal-finance-dashboard-iota-six.vercel.app/"
+              githubUrl="https://github.com/chrislff02/personal-finance-dashboard"
+            />
+          </>
+        )}
+      </div>
+
+      {/* Show More / Show Less Button */}
+      <div className="projects-toggle">
+        <button
+          type="button"
+          className="retro-button"
+          onClick={() => setShowMoreProjects(!showMoreProjects)}
+        >
+          {showMoreProjects ? "SHOW LESS" : "VIEW MORE PROJECTS"}
+        </button>
       </div>
     </section>
   );
