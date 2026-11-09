@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [connectOpen, setConnectOpen] = useState(false);
+
+  const lastScrollY = useRef(0);
+  const connectRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,8 +17,9 @@ function Navbar() {
       }
 
       // Hide navbar while scrolling down
-      else if (currentScrollY > lastScrollY) {
+      else if (currentScrollY > lastScrollY.current) {
         setShowNavbar(false);
+        setConnectOpen(false);
       }
 
       // Show navbar again while scrolling up
@@ -24,17 +28,40 @@ function Navbar() {
       }
 
       // Save current scroll position for next scroll event
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
-    // Listen for page scrolling
     window.addEventListener("scroll", handleScroll);
 
-    // Remove event listener when component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, []);
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        connectRef.current &&
+        !connectRef.current.contains(event.target as Node)
+      ) {
+        setConnectOpen(false);
+      }
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setConnectOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
 
   return (
     <nav
@@ -49,6 +76,41 @@ function Navbar() {
         <a href="#projects">PROJECTS</a>
         <a href="#skills">SKILLS</a>
         <a href="#contact">CONTACT</a>
+
+        {/* Connect Dropdown */}
+        <div className="connect-menu" ref={connectRef}>
+          <button
+            type="button"
+            className="connect-button"
+            onClick={() => setConnectOpen(!connectOpen)}
+            aria-expanded={connectOpen}
+            aria-haspopup="true"
+          >
+            CONNECT
+          </button>
+
+          {connectOpen && (
+            <div className="connect-dropdown">
+              <a href="mailto:chrislff02@gmail.com">&gt; EMAIL</a>
+
+              <a
+                href="https://github.com/chrislff02"
+                target="_blank"
+                rel="noreferrer"
+              >
+                &gt; GITHUB
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/christian-leonard-franco-fernandez-a68684348"
+                target="_blank"
+                rel="noreferrer"
+              >
+                &gt; LINKEDIN
+              </a>
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   );

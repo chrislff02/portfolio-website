@@ -44,6 +44,8 @@ section {
 
 .nav-links {
   display: flex;
+  align-items: center;
+
   gap: 30px;
 }
 
@@ -52,6 +54,58 @@ section {
 }
 
 .nav-links a:hover {
+  background-color: #45f59a;
+  color: #101310;
+}
+
+/* Connect Dropdown */
+.connect-menu {
+  position: relative;
+}
+
+.connect-button {
+  border: none;
+
+  padding: 0;
+
+  background-color: transparent;
+  color: #45f59a;
+
+  font-family: inherit;
+  font-size: 1.4rem;
+
+  cursor: pointer;
+}
+
+.connect-button:hover {
+  background-color: #45f59a;
+  color: #101310;
+}
+
+.connect-dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+
+  min-width: 160px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 2px solid #45f59a;
+
+  background-color: #101310;
+}
+
+.connect-dropdown a {
+  padding: 12px 16px;
+
+  font-size: 1.1rem;
+
+  white-space: nowrap;
+}
+
+.connect-dropdown a:hover {
   background-color: #45f59a;
   color: #101310;
 }
@@ -297,6 +351,18 @@ section {
   gap: 15px;
 }
 
+/* Projects Show More Button */
+.projects-toggle {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 45px;
+}
+
+.projects-toggle .retro-button {
+  font-size: 1.2rem;
+}
+
 /* Project Information Modal */
 .project-modal-overlay {
   position: fixed;
@@ -458,6 +524,21 @@ section {
     font-size: 0.9rem;
   }
 
+  /* Connect Dropdown */
+  .connect-button {
+    font-size: 0.9rem;
+  }
+
+  .connect-dropdown {
+    right: 0;
+
+    min-width: 140px;
+  }
+
+  .connect-dropdown a {
+    font-size: 0.9rem;
+  }
+
   /* Hero */
   .hero-layout {
     grid-template-columns: 1fr;
@@ -592,16 +673,4 @@ section {
   opacity: 0.7;
 
   margin-bottom: 20px;
-}
-
-/* Projects Show More Button */
-.projects-toggle {
-  display: flex;
-  justify-content: center;
-
-  margin-top: 45px;
-}
-
-.projects-toggle .retro-button {
-  font-size: 1.2rem;
 }
