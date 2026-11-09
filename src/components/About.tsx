@@ -36,8 +36,8 @@ function About() {
           {/* Current Activities */}
           <h2>CURRENTLY</h2>
 
-          <p>&gt; Practicing algorithms</p>
-          <p>&gt; Developing new projects</p>
+          <p>&gt; Building and refining projects</p>
+          <p>&gt; Practicing algorithms and problem solving</p>
         </div>
       </div>
     </section>
