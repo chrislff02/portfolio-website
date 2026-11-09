@@ -25,11 +25,24 @@ function Skills() {
 
         <div className="skills-list">
           <span>React</span>
-          <span>Bootstrap</span>
           <span>Node.js</span>
+          <span>Express</span>
+          <span>FastAPI</span>
+          <span>Bootstrap</span>
           <span>PyTorch</span>
           <span>Pandas</span>
           <span>Scikit-learn</span>
+          <span>Scapy</span>
+        </div>
+      </div>
+
+      {/* Databases */}
+      <div className="skills-section">
+        <h2>DATABASES</h2>
+
+        <div className="skills-list">
+          <span>PostgreSQL</span>
+          <span>SQLite</span>
         </div>
       </div>
 
@@ -41,7 +54,7 @@ function Skills() {
           <span>Git</span>
           <span>GitHub</span>
           <span>VS Code</span>
-          <span>SQLite</span>
+          <span>Vite</span>
           <span>Eclipse</span>
           <span>Android Studio</span>
         </div>
@@ -56,7 +69,11 @@ function Skills() {
           <span>Data Structures</span>
           <span>Algorithms</span>
           <span>REST APIs</span>
+          <span>API Integration</span>
+          <span>JWT Authentication</span>
           <span>Machine Learning</span>
+          <span>Networking</span>
+          <span>Packet Analysis</span>
         </div>
       </div>
     </section>
